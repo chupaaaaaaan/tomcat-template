@@ -1,0 +1,2 @@
+data/webapps/*
+!data/webapps/manager
