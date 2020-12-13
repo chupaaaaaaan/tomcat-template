@@ -2,15 +2,15 @@ version: '3.1'
 
 services:
 
-  tomcat:
-    image: tomcat:10
-    container_name: tomcat
+  tomee:
+    image: tomee:8.0.5-plume
+    container_name: tomee
 
     restart: always
 
     ports:
       - "8888:8080"
 
-    # volumes:
-    #   - ./data/webapps:/usr/local/tomcat/webapps
-    #   - ./build/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+    volumes:
+      - ./data/webapps/manager/META-INF/context.xml:/usr/local/tomee/webapps/manager/META-INF/context.xml
+      - ./build/conf/tomcat-users.xml:/usr/local/tomee/conf/tomcat-users.xml
